@@ -1,7 +1,7 @@
 package com.dh.securitydemo.controller;
 
 import com.dh.securitydemo.model.Produto;
-import com.dh.securitydemo.service.ProdutoService;
+import com.dh.securitydemo.service.impl.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

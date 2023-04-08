@@ -1,4 +1,4 @@
-package com.dh.securitydemo.service;
+package com.dh.securitydemo.service.impl;
 
 import com.dh.securitydemo.model.Produto;
 import com.dh.securitydemo.repository.IProdutoRepository;
