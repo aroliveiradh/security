@@ -1,6 +1,8 @@
 package com.dh.securitydemo.controller;
 
-import com.dh.securitydemo.model.Produto;
+import com.dh.securitydemo.controller.dto.ProdutoDTO;
+import com.dh.securitydemo.exception.InvalidDataException;
+import com.dh.securitydemo.exception.ResourceNotFoundException;
 import com.dh.securitydemo.service.impl.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,22 +19,22 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @PostMapping
-    public ResponseEntity<Produto> cadastrar(@RequestBody Produto produto) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(produtoService.salvar(produto));
+    public ResponseEntity<ProdutoDTO> cadastrar(@RequestBody ProdutoDTO produtoDTO) throws InvalidDataException {
+        return ResponseEntity.status(HttpStatus.CREATED).body(produtoService.salvar(produtoDTO));
     }
 
     @GetMapping
-    public ResponseEntity<List<Produto>> buscarTodos() {
+    public ResponseEntity<List<ProdutoDTO>> buscarTodos() throws ResourceNotFoundException {
         return ResponseEntity.status(HttpStatus.OK).body(produtoService.buscarTodos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Produto> buscarPorId(@PathVariable Long id) {
+    public ResponseEntity<ProdutoDTO> buscarPorId(@PathVariable Long id) throws ResourceNotFoundException {
         return ResponseEntity.status(HttpStatus.OK).body(produtoService.buscarPorId(id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deletar(@PathVariable Long id) {
+    public ResponseEntity deletar(@PathVariable Long id) throws ResourceNotFoundException {
         produtoService.excluir(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }

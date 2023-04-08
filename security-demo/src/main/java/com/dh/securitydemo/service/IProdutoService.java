@@ -1,14 +1,15 @@
 package com.dh.securitydemo.service;
 
+import com.dh.securitydemo.controller.dto.ProdutoDTO;
 import com.dh.securitydemo.model.Produto;
 
 import java.util.List;
 
 public interface IProdutoService {
 
-    Produto salvar(Produto produto);
-    List<Produto> buscarTodos();
-    Produto buscarPorId(Long id);
+    ProdutoDTO salvar(Produto produto);
+    List<ProdutoDTO> buscarTodos();
+    ProdutoDTO buscarPorId(Long id);
     void excluir(Long id);
 
 }
