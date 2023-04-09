@@ -1,4 +1,4 @@
-package com.dh.securitydemo.controller.dto;
+package com.dh.securitydemo.model.dto;
 
 import lombok.*;
 

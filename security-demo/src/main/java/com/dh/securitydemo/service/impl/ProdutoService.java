@@ -1,6 +1,6 @@
 package com.dh.securitydemo.service.impl;
 
-import com.dh.securitydemo.controller.dto.ProdutoDTO;
+import com.dh.securitydemo.model.dto.ProdutoDTO;
 import com.dh.securitydemo.exception.InvalidDataException;
 import com.dh.securitydemo.exception.ResourceNotFoundException;
 import com.dh.securitydemo.model.Produto;

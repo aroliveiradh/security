@@ -1,6 +1,6 @@
 package com.dh.securitydemo.service;
 
-import com.dh.securitydemo.controller.dto.ProdutoDTO;
+import com.dh.securitydemo.model.dto.ProdutoDTO;
 import com.dh.securitydemo.model.Produto;
 
 import java.util.List;
